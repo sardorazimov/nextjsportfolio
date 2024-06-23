@@ -14,9 +14,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
+      },
       animation: {
         shimmer: "shimmer 2s linear infinite",
+        orbit: "orbit calc(var(--duration)*1s) linear infinite",
+           marquee: "marquee var(--duration) linear infinite",
+      "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
+   
       
       keyframes: {
         shimmer: {
@@ -27,15 +34,30 @@ const config: Config = {
             backgroundPosition: "-200% 0",
           },
         },
+        orbit: {
+          "0%": {
+              transform: "rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)",
+          },
+          "100%": {
+              transform: "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
+          },
+      },
+      marquee: {
+        from: { transform: "translateX(0)" },
+        to: { transform: "translateX(calc(-100% - var(--gap)))" },
+      },
+      "marquee-vertical": {
+        from: { transform: "translateY(0)" },
+        to: { transform: "translateY(calc(-100% - var(--gap)))" },
+      },
+
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      boxShadow: {
-        input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
-      },
+      
     },
   },
   plugins: [
