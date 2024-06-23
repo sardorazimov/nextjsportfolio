@@ -74,8 +74,8 @@ const MarqueeDemoVertical = () => {
           <ReviewCard key={review.username} {...review} />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white dark:from-background"></div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-purple dark:from-background"></div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-purple dark:from-background"></div>
     </div>
   );
 };
